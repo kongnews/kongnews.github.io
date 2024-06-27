@@ -101,6 +101,21 @@ layout: compress
                 adDiv.appendChild(script);
             }
         });
+
+        const h3Elements = document.querySelectorAll('h3');
+        h3Elements.forEach((h3, index) => {
+            if ((index + 1) % 3 === 2) { // 2nd, 5th, 8th, etc.
+                const adIndex = index % adBlocks.length;
+                const adDiv = document.createElement('div');
+                adDiv.innerHTML = adBlocks[adIndex].html;
+
+                h3.insertAdjacentElement('afterend', adDiv);
+
+                const script = document.createElement('script');
+                script.innerHTML = adBlocks[adIndex].script;
+                adDiv.appendChild(script);
+            }
+        });
     </script>
   </body>
 </html>
