@@ -89,7 +89,7 @@ layout: compress
 
         const h2Elements = document.querySelectorAll('h2');
         h2Elements.forEach((h2, index) => {
-            if ((index + 1) % 3 === 1) {
+            if ((index + 1) % 3 === 0) {
                 const adIndex = index % adBlocks.length;
                 const adDiv = document.createElement('div');
                 adDiv.innerHTML = adBlocks[adIndex].html;
@@ -104,7 +104,7 @@ layout: compress
 
         const h3Elements = document.querySelectorAll('h3');
         h3Elements.forEach((h3, index) => {
-            if ((index + 1) % 3 === 2) { // 2nd, 5th, 8th, etc.
+            if ((index + 1) % 3 === 2) {
                 const adIndex = index % adBlocks.length;
                 const adDiv = document.createElement('div');
                 adDiv.innerHTML = adBlocks[adIndex].html;
