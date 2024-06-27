@@ -16,27 +16,6 @@ layout: compress
 <html lang="{{ page.lang | default: site.alt_lang | default: site.lang }}" {{ prefer_mode }}>
   {% include head.html %}
   <script async src="https://modoo-ads.pub-code.com/page/js/adsbymodoo.js?client=ca-pub-9997911924418943"></script>
-  <script>
-      const adBlocks = [
-          {
-              html: '<ins class="adsbymodoo" style="display:block" data-ad-client="ca-pub-9997911924418943" data-ad-box="rectangle" data-ad-slot="6063986386"></ins>',
-              script: "(adsbymodoo = window.adsbymodoo || []).push({});"
-          }
-      ];
-
-      const h2Elements = document.querySelectorAll('h2');
-      h2Elements.forEach((h2, index) => {
-          const adIndex = index % adBlocks.length;
-          const adDiv = document.createElement('div');
-          adDiv.innerHTML = adBlocks[adIndex].html;
-
-          h2.insertAdjacentElement('afterend', adDiv);
-
-          const script = document.createElement('script');
-          script.innerHTML = adBlocks[adIndex].script;
-          adDiv.appendChild(script);
-      });
-  </script>
 
   <body>
     {% include sidebar.html lang=lang %}
@@ -100,5 +79,26 @@ layout: compress
     {% include js-selector.html lang=lang %}
 
     {% include_cached search-loader.html lang=lang %}
+    <script>
+        const adBlocks = [
+            {
+                html: '<ins class="adsbymodoo" style="display:block" data-ad-client="ca-pub-9997911924418943" data-ad-box="rectangle" data-ad-slot="6063986386"></ins>',
+                script: "(adsbymodoo = window.adsbymodoo || []).push({});"
+            }
+        ];
+
+        const h2Elements = document.querySelectorAll('h2');
+        h2Elements.forEach((h2, index) => {
+            const adIndex = index % adBlocks.length;
+            const adDiv = document.createElement('div');
+            adDiv.innerHTML = adBlocks[adIndex].html;
+
+            h2.insertAdjacentElement('afterend', adDiv);
+
+            const script = document.createElement('script');
+            script.innerHTML = adBlocks[adIndex].script;
+            adDiv.appendChild(script);
+        });
+    </script>
   </body>
 </html>
